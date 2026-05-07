@@ -133,11 +133,12 @@
 
     <div class="section">
       <h3>Cadastro de Clientes</h3>
-      <input type="text" placeholder="Nome do cliente">
-      <input type="text" placeholder="Telefone">
-      <input type="text" placeholder="Veículo">
-      <input type="text" placeholder="Placa">
-      <button>Cadastrar Cliente</button>
+      <input type="text" placeholder="Nome do cliente" class="cliente-input">
+      <input type="text" placeholder="Telefone" class="cliente-input">
+      <input type="text" placeholder="Veículo" class="cliente-input">
+      <input type="text" placeholder="Placa" class="cliente-input">
+      <button onclick="cadastrarCliente()">Cadastrar Cliente</button>
+      <div id="lista-clientes"></div>
     </div>
 
     <div class="section">
@@ -181,5 +182,51 @@
     </div>
 
   </div>
+  <script>
+    const clientes = [];
+
+    function cadastrarCliente() {
+      const inputs = document.querySelectorAll('.cliente-input');
+
+      const cliente = {
+        nome: inputs[0].value,
+        telefone: inputs[1].value,
+        veiculo: inputs[2].value,
+        placa: inputs[3].value
+      };
+
+      clientes.push(cliente);
+      localStorage.setItem('clientesFastReparo', JSON.stringify(clientes));
+
+      renderClientes();
+
+      inputs.forEach(input => input.value = '');
+    }
+
+    function renderClientes() {
+      const lista = document.getElementById('lista-clientes');
+      lista.innerHTML = '';
+
+      const dados = JSON.parse(localStorage.getItem('clientesFastReparo')) || [];
+
+      dados.forEach(cliente => {
+        const item = document.createElement('div');
+        item.style.background = '#101010';
+        item.style.padding = '10px';
+        item.style.borderRadius = '10px';
+        item.style.marginTop = '10px';
+
+        item.innerHTML = `
+          <strong>${cliente.nome}</strong><br>
+          ${cliente.telefone}<br>
+          ${cliente.veiculo} - ${cliente.placa}
+        `;
+
+        lista.appendChild(item);
+      });
+    }
+
+    renderClientes();
+  </script>
 </body>
 </html>
