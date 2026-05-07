@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Reparo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .header {
+      background: #1b1b1b;
+      border: 1px solid #ff2b2b;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      color: #ff2b2b;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #333;
+    }
+
+    .card h2 {
+      color: #ff2b2b;
+      margin-top: 10px;
+    }
+
+    .section {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+    }
+
+    .section h3 {
+      color: #ff2b2b;
+      margin-bottom: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background: #101010;
+      color: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #ff2b2b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d90000;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>Fast Reparo</h1>
+      <p>Serviços de Funilaria e Pintura</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <p>Clientes</p>
+        <h2>148</h2>
+      </div>
+
+      <div class="card">
+        <p>Ordens de Serviço</p>
+        <h2>37</h2>
+      </div>
+
+      <div class="card">
+        <p>Estoque</p>
+        <h2>82 itens</h2>
+      </div>
+
+      <div class="card">
+        <p>Financeiro</p>
+        <h2>R$ 24.580</h2>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Cadastro de Clientes</h3>
+      <input type="text" placeholder="Nome do cliente">
+      <input type="text" placeholder="Telefone">
+      <input type="text" placeholder="Veículo">
+      <input type="text" placeholder="Placa">
+      <button>Cadastrar Cliente</button>
+    </div>
+
+    <div class="section">
+      <h3>Ordem de Serviço</h3>
+      <input type="text" placeholder="Cliente">
+      <input type="text" placeholder="Serviço">
+      <input type="text" placeholder="Valor">
+
+      <select>
+        <option>Em andamento</option>
+        <option>Aguardando peça</option>
+        <option>Finalizado</option>
+      </select>
+
+      <button>Salvar Ordem</button>
+    </div>
+
+    <div class="section">
+      <h3>Controle Financeiro</h3>
+      <input type="text" placeholder="Descrição">
+      <input type="text" placeholder="Valor">
+
+      <select>
+        <option>Entrada</option>
+        <option>Saída</option>
+      </select>
+
+      <button>Adicionar</button>
+    </div>
+
+    <div class="section">
+      <h3>Controle de Estoque</h3>
+      <input type="text" placeholder="Produto">
+      <input type="text" placeholder="Quantidade">
+      <input type="text" placeholder="Fornecedor">
+      <button>Adicionar Produto</button>
+    </div>
+
+    <div class="footer">
+      Sistema Fast Reparo • Compatível com celular
+    </div>
+
+  </div>
+</body>
+</html>
